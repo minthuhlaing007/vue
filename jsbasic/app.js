@@ -307,15 +307,98 @@
 
 // request.send();
 
-let request = new XMLHttpRequest();
+// let request = new XMLHttpRequest();
 
-request.addEventListener("readystatechange", () => {
-  if (request.readyState === 4 && request.status === 200) {
-    console.log(request.responseText);
-  } else if (request.status === 404) {
-    console.log("this Url is unavailable");
-  }
-});
+// request.addEventListener("readystatechange", () => {
+//   if (request.readyState === 4 && request.status === 200) {
+//     console.log(request.responseText);
+//   } else if (request.status === 404) {
+//     console.log("this Url is unavailable");
+//   }
+// });
 
-request.open("GET", "https://fakestoreapi.com/products");
-request.send();
+// request.open("GET", "https://fakestoreapi.com/products");
+// request.send();
+
+// console.log("i am first");
+
+// let todos = (callback) => {
+//   let request = new XMLHttpRequest();
+
+//   request.addEventListener("readystatechange", () => {
+//     if (request.readyState === 4 && request.status === 200) {
+//       let datas = JSON.parse(request.responseText);
+//       callback(datas, undefined);
+//     } else if (request.status === 404) {
+//       callback(undefined, "Something's went wrong please try again later");
+//     }
+//   });
+
+//   request.open("GET", "https://fakestoreapi.com/products");
+//   request.send();
+// };
+
+// todos((data,err)=>{
+//   console.log(data,err);
+// })
+
+// todos((data, err) => {
+//   if (data) {
+//     console.log(data);
+//   } else {
+//     console.log(err);
+//   }
+// });
+
+// let todos = (callback) => {
+//   let request = new XMLHttpRequest();
+
+//   request.addEventListener("readystatechange", () => {
+//     // console.log(request.responseText);
+//     if (request.readyState === 4 && request.status === 200) {
+//       let datas = JSON.parse(request.responseText)
+//       callback(datas, undefined);
+//     } else if (request.status === 404) {
+//       callback(undefined, request.status + " error");
+//     }
+//   });
+
+//   request.open("GET", "http://127.0.0.1:5500/jsbasic/name.json");
+//   request.send();
+// };
+
+// todos((data, error) => {
+//   console.log(data, error);
+// });
+
+// todos((data,error)=>{
+//   if(data){
+//     console.log(data);
+//   }else{
+//     console.log(error);
+//   }
+// })
+
+// let todos = (callback) => {
+//   let request = new XMLHttpRequest();
+
+//   request.addEventListener("readystatechange", () => {
+//     if (request.readyState === 4 && request.status === 200) {
+//       let datas = JSON.parse(request.responseText);
+//       callback(datas, undefined);
+//     } else if (request.status === 404) {
+//       callback(undefined, request.status + " error please check your Url");
+//     }
+//   });
+
+//   request.open("GET", "./jsbasic/name.json");
+//   request.send();
+// };
+
+// todos((data, error) => {
+//   if (data) {
+//     console.log(data);
+//   } else {
+//     console.log(error);
+//   }
+// });

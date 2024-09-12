@@ -1,0 +1,22 @@
+[
+  {
+    "name": "minthuhlaing",
+    "age": 24,
+    "isMarried": true
+  },
+  {
+    "name": "johnDoe",
+    "age": 25,
+    "isMarried": false
+  },
+  {
+    "name": "susan",
+    "age": 11,
+    "isMarried": true
+  },
+  {
+    "name": "bob",
+    "age": 26,
+    "isMarried": false
+  }
+]
