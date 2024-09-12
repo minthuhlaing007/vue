@@ -146,12 +146,10 @@
 
 // let getName = name => {return name}
 
-
-
 // Array
 
 // let names = ["johndoe","mark","alice","susan"];
-// console.log(names); 
+// console.log(names);
 
 // for each method (array ko bae loop pat tar)
 
@@ -168,7 +166,6 @@
 // let mappedNames = names.map(name=>`Hello ${name} how are you?`);
 
 // console.log(mappedNames);
-
 
 // Obj
 
@@ -213,7 +210,6 @@
 // console.log(user1.getAge());
 // console.log(user1.getGender());
 
-
 // constructor function
 
 // function Person(name,age,hairColor){
@@ -224,3 +220,102 @@
 
 // let person = new Person("JohnDoe",34,"brown");
 // console.log(person);
+
+// async example
+// console.log("i am number one");
+// console.log("i am number two");
+// setTimeout(()=>{
+//   console.log("i am number three")
+// },(5000));
+// console.log("i am number four");
+// console.log("i am number five");
+
+// sync function
+
+// function sync() {
+//   let result = 0;
+//   for (let i = 0; i < 1000000000; i++) {
+//     result += i;
+//   }
+//   return result;
+// }
+
+// console.log("work");
+// console.log(sync());
+// console.log("more important work");
+
+// async function
+
+// function async() {
+//   return new Promise((resolve, reject) => {
+//     let result = 0;
+//     for (let i = 0; i < 1000000000; i++) {
+//       result += i;
+//     }
+//     if (result) resolve(result);
+//     else reject("i have an error");
+//   });
+// }
+
+// console.log("work");
+// async()
+//   .then((success) => {
+//     console.log(success);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+// console.log("more important work");
+
+// error async function
+
+// function async() {
+//   return new Promise((resolve, reject) => {
+//     let result = 0;
+//     for (let i = 0; i < 1000000000; i++) {
+//       result += i + undefined;
+//     }
+//     if (result) resolve(result);
+//     else reject("I have an error....");
+//   });
+// }
+
+// console.log("work");
+// async()
+//   .then((success) => {
+//     console.log(success);
+//   })
+//   .catch((fail) => {
+//     console.log(fail);
+//   });
+// console.log("more important work");
+// console.log("most important work");
+
+// https://fakestoreapi.com/products/1
+
+// let request = new XMLHttpRequest();
+
+// request.addEventListener("readystatechange", () => {
+//   // console.log(request,request.readyState)
+
+//   if (request.readyState === 4) {
+//     console.log(request.responseText);
+//   }
+// });
+
+// request.open("GET", "https://fakestoreapi.com/products/");
+
+// request.send();
+
+let request = new XMLHttpRequest();
+
+request.addEventListener("readystatechange", () => {
+  if (request.readyState === 4 && request.status === 200) {
+    console.log(request.responseText);
+  } else if (request.status === 404) {
+    console.log("this Url is unavailable");
+  }
+});
+
+request.open("GET", "https://fakestoreapi.com/products");
+request.send();
