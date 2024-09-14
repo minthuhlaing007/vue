@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Js Basic</title>
+    <title>Vue Project</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
-    <h1>Js Basic</h1>
+    <h1>Vue Js</h1>
+    <div id="app">
+      <h1>Hello world my name is <mark>{{name}}</mark></h1>
+      <p>
+        I am {{age}} years old and my gender is {{gender}}. Are you a
+        Programmer? {{isProgrammer}}, i am a programmer.
+      </p>
+      <button v-on:click="increaseAge">Increase Age</button>
+      <br />
+      <button v-on:click="name ='Hunny Kyaw'">Change Name</button>
+      <br />
+      <button v-on:click="gender ='female'">Change Gender</button>
+      <button v-on:click="isProgrammer = false">Change False</button>
+    </div>
 
-    <script src="/jsbasic/app.js"></script>
+    <script src="vue.js"></script>
   </body>
 </html>
