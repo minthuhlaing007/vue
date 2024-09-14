@@ -402,3 +402,119 @@
 //     console.log(error);
 //   }
 // });
+
+// let todos = (resource) => {
+//   return new Promise((resolve, reject) => {
+//     let request = new XMLHttpRequest();
+
+//     request.addEventListener("readystatechange", () => {
+//       if (request.readyState === 4 && request.status === 200) {
+//         let datas = JSON.parse(request.responseText);
+//         // callback(datas, undefined);
+//         resolve(datas);
+//       } else if (request.status === 404) {
+//         // callback(undefined, request.status + " error please check your Url");
+//         reject(request.status + " error please try again later...");
+//       }
+//     });
+
+//     request.open("GET", resource);
+//     request.send();
+//   });
+// };
+
+// todos("./jsbasic/name.json").then((success)=>{
+//   console.log(success);
+// })
+// .catch((error)=>{
+//   console.log(error);
+// })
+
+// let todos = (resource) => {
+//   return new Promise((resolve, reject) => {
+//     let request = new XMLHttpRequest();
+
+//     request.addEventListener("readystatechange", () => {
+//       if (request.readyState === 4 && request.status === 200) {
+//         let datas = JSON.parse(request.responseText);
+//         resolve(datas);
+//       } else if (request.status === 404) {
+//         reject(request.status + " error please try again later...");
+//       }
+//     });
+
+//     request.open("GET", resource);
+//     request.send();
+//   });
+// };
+
+// todos("./jsbasic/name.json")
+//   .then((success) => {
+//     console.log(success);
+//     return todos("https://fakestoreapi.com/products")
+//   })
+//   .then((datas)=>{
+//     console.log(datas);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+// fetch
+
+// fetch("https://fakestoreapi.com/products")
+// .then((response)=>{
+//   response.json().then((datas)=>{
+//     console.log(datas);
+//   }).catch((error)=>{
+//     console.log(error);
+//   })
+// })
+// .catch((error)=>{
+//   console.log(error);
+// })
+
+// fetch("./jsbasic/name.json")
+// .then((response)=>{
+//   return response.json();
+// })
+// .then((datas)=>{
+//   console.log(datas);
+// })
+// .catch((error)=>{
+//   console.log(error);
+// })
+
+// fetch("./jsbasic/name.json")
+//   .then((response) => {
+//     if (response.status === 404) {
+//       throw new Error("Please try again later something went wrong...");
+//     }
+//     return response.json();
+//   })
+//   .then((datas) => {
+//     console.log(datas);
+//   })
+//   .catch((error) => {
+//     console.log(error.message);
+//   });
+
+let getJson = async () => {
+  let response = await fetch("./jsbasic/name.jso");
+  // console.log(response);
+  if (response.status === 404) {
+    throw new Error("motherfucker...");
+  }
+  let datas = await response.json();
+  // console.log(datas);
+
+  return datas;
+};
+
+getJson()
+  .then((datas) => {
+    console.log(datas);
+  })
+  .catch((error) => {
+    console.log(error.message);
+  });
