@@ -1,17 +1,41 @@
+// const app = Vue.createApp({
+//   data(){
+//     return{
+//       name:"Min Thu Hlaing",
+//       age:32,
+//       gender:"Male",
+//       showInfo: true,
+//     }
+//   }
+// })
+
+// app.mount("#app")
+
+
+// const app = Vue.createApp({
+//   data(){
+//     return{
+//       name:"hunny kyaw",
+//       age:44,
+//       gender:"Female",
+//       showInfo: true
+//     }
+//   }
+// })
+
+// app.mount("#app")
+
+
+
 const app = Vue.createApp({
-  // template:"<h1>Hello World</h1>"
   data(){
     return{
-      name:"min thu hlaing",
-      age:24,
+      name:"john doe",
+      age: 44,
       gender: "Male",
-      isProgrammer: true,
-    }
-  },
-  methods:{
-    increaseAge(){
-      this.age++;
+      showInfo: true
     }
   }
 })
-app.mount("#app");
+
+app.mount("#app")
