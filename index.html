@@ -3,40 +3,39 @@
   <head>
     <title>Vue Project</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+      .one {
+        width: 300px;
+        height: 200px;
+        background: slategray;
+        color: #fff;
+        float: left;
+        margin-right: 5px;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <h1>Vue Js</h1>
 
-    <!-- <div id="app">
-      <div v-if="showInfo">
-        <p>Name = {{name}}</p>
-        <p>Age = {{age}}</p>
-        <p>Gender = {{gender}}</p>
-      </div>
-      <button v-on:click="showInfo = false">Hide Info</button>
-      <button @click="showInfo = true">Show Info</button>
-    </div> -->
-
-    <!-- <div id="app">
-      <div v-if="showInfo">
-        <p>Name = {{name}}</p>
-        <p>Age = {{age}}</p>
-        <p>Gender = {{gender}}</p>
-      </div>
-      <button @click="showInfo=!showInfo">Toggle Info</button>
-    </div> -->
-
-
     <div id="app">
-      <div v-if="showInfo">
-        <p>Name = {{name}}</p>
-        <p>Age = {{age}}</p>
-        <p>Gender = {{gender}}</p>
+      <div
+        class="one"
+        id="div1"
+        @mouseover="mouseoverHandler($event,'john doe')"
+      >
+        Mouse over Handler
       </div>
-      <button @click="showInfo=!showInfo">
-        <span v-if="showInfo">Hide Info</span>
-        <span v-if="!showInfo">Show Info</span>
-      </button>
+      <div
+        class="one"
+        id="div2"
+        @mouseleave="mouseleaveHandler($event,'alice')"
+      >
+        Mouse leave Handler
+      </div>
+      <div class="one" id="div3" @dblclick="mousedbHandler($event,'bob')">
+        Mouse double click Handler
+      </div>
     </div>
     <script src="vue.js"></script>
   </body>
