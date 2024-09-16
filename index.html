@@ -22,19 +22,26 @@
       </div>
     </div> -->
 
-    <div id="app">
+    <!-- <div id="app">
       <div v-if="showIcon">
         <div v-for="book in books">
           <p>Title:{{book.title}}</p>
           <p>Author:{{book.author}}</p>
           <p>Age:{{book.age}}</p>
           <p>Gender:{{book.gender}}</p>
+          <hr />
         </div>
       </div>
       <button @click="showIcon=!showIcon">
         <span v-if="showIcon">Hide</span>
         <span v-if="!showIcon">Show</span>
       </button>
+    </div> -->
+
+    <div id="app">
+      <a v-bind:href="link">Google</a>
+      <br />
+      <a :href="link1">Youtube</a>
     </div>
 
     <script src="vue.js"></script>

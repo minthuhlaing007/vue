@@ -22,7 +22,9 @@ const app = Vue.createApp({
           age:44
         }
       ],
-      showIcon:true
+      showIcon:true,
+      link:"https://google.com",
+      link1:"https://youtube.com"
     }
   }
 })
