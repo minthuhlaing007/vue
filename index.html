@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Vue Project</title>
+    <title>Js for in loop</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <style>
-      .one {
-        width: 300px;
-        height: 200px;
-        background: slategray;
-        color: #fff;
-        float: left;
-        margin-right: 5px;
-        text-align: center;
-      }
-    </style>
   </head>
   <body>
-    <h1>Vue Js</h1>
+    <!-- <div id="app">
+      <div v-for="books">
+        <p>Title:{{books[0].title}}</p>
+        <p>Author:{{books[0].author}}</p>
+        <p>Age:{{books[0].age}}</p>
+        <p>Gender:{{books[0].gender}}</p>
+        <p>Title:{{books[1].title}}</p>
+        <p>Author:{{books[1].author}}</p>
+        <p>Age:{{books[1].age}}</p>
+        <p>Gender:{{books[1].gender}}</p>
+        <p>Title:{{books[2].title}}</p>
+        <p>Author:{{books[2].author}}</p>
+        <p>Age:{{books[2].age}}</p>
+        <p>Gender:{{books[2].gender}}</p>
+      </div>
+    </div> -->
 
     <div id="app">
-      <div
-        class="one"
-        id="div1"
-        @mouseover="mouseoverHandler($event,'john doe')"
-      >
-        Mouse over Handler
+      <div v-if="showIcon">
+        <div v-for="book in books">
+          <p>Title:{{book.title}}</p>
+          <p>Author:{{book.author}}</p>
+          <p>Age:{{book.age}}</p>
+          <p>Gender:{{book.gender}}</p>
+        </div>
       </div>
-      <div
-        class="one"
-        id="div2"
-        @mouseleave="mouseleaveHandler($event,'alice')"
-      >
-        Mouse leave Handler
-      </div>
-      <div class="one" id="div3" @dblclick="mousedbHandler($event,'bob')">
-        Mouse double click Handler
-      </div>
+      <button @click="showIcon=!showIcon">
+        <span v-if="showIcon">Hide</span>
+        <span v-if="!showIcon">Show</span>
+      </button>
     </div>
+
     <script src="vue.js"></script>
   </body>
 </html>
