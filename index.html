@@ -3,47 +3,38 @@
   <head>
     <title>Js for in loop</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+      li {
+        list-style: none;
+      }
+      .favourite {
+        background: #6de3f7;
+        color: red;
+        font-size: large;
+        font-family: monospace;
+      }
+    </style>
   </head>
   <body>
-    <!-- <div id="app">
-      <div v-for="books">
-        <p>Title:{{books[0].title}}</p>
-        <p>Author:{{books[0].author}}</p>
-        <p>Age:{{books[0].age}}</p>
-        <p>Gender:{{books[0].gender}}</p>
-        <p>Title:{{books[1].title}}</p>
-        <p>Author:{{books[1].author}}</p>
-        <p>Age:{{books[1].age}}</p>
-        <p>Gender:{{books[1].gender}}</p>
-        <p>Title:{{books[2].title}}</p>
-        <p>Author:{{books[2].author}}</p>
-        <p>Age:{{books[2].age}}</p>
-        <p>Gender:{{books[2].gender}}</p>
-      </div>
-    </div> -->
-
-    <!-- <div id="app">
+    <h1>Books</h1>
+    <div id="app">
       <div v-if="showIcon">
-        <div v-for="book in books">
-          <p>Title:{{book.title}}</p>
-          <p>Author:{{book.author}}</p>
-          <p>Age:{{book.age}}</p>
-          <p>Gender:{{book.gender}}</p>
-          <hr />
-        </div>
+        <ul v-for="book in books">
+          <li v-bind:class="{favourite:book.isFav}">
+            <img :src="book.img" width="300px" alt="" />
+            <p>Title:{{book.title}}</p>
+            <p>Author:{{book.author}}</p>
+            <p>Age: {{book.age}}</p>
+            <p>Gender:{{book.gender}}</p>
+            <a :href="link">Book link</a>
+          </li>
+        </ul>
       </div>
       <button @click="showIcon=!showIcon">
         <span v-if="showIcon">Hide</span>
         <span v-if="!showIcon">Show</span>
       </button>
-    </div> -->
-
-    <div id="app">
-      <a v-bind:href="link">Google</a>
-      <br />
-      <a :href="link1">Youtube</a>
     </div>
-
     <script src="vue.js"></script>
   </body>
 </html>
