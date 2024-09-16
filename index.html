@@ -1,69 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Js for in loop</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Js</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <style>
-      li {
+      h1 {
+        background: #000;
+        color: yellow;
+        border-radius: 50px;
+        text-align: center;
+      }
+      ul li {
         list-style: none;
       }
-      .favourite {
-        background: #6de3f7;
-        color: red;
-        font-size: large;
-        font-family: monospace;
-      }
-
-      .bg {
-        background: #6de3f7;
-        color: red;
-        font-size: large;
+      .favourite{
+        background: #000;
+        color: yellow;
         font-family: monospace;
         text-align: center;
-        transition: all 3s;
       }
     </style>
   </head>
   <body>
-    <h1>Books</h1>
-    <!-- Fist Method -->
-
-    <!-- <div id="app">
-      <div v-if="showIcon">
-        <ul v-for="book in books">
-          <li v-bind:class="{favourite:book.isFav}" @click="book.isFav=!book.isFav">
-            <img :src="book.img" width="300px" alt="" />
-            <p>Title:{{book.title}}</p>
-            <p>Author:{{book.author}}</p>
-            <p>Age: {{book.age}}</p>
-            <p>Gender:{{book.gender}}</p>
-            <a :href="link">Book link</a>
-          </li>
-        </ul>
-      </div>
-      <button @click="showIcon=!showIcon">
-        <span v-if="showIcon">Hide</span>
-        <span v-if="!showIcon">Show</span>
-      </button>
-    </div> -->
-
-    <!-- Second Method -->
+    <h1>These are my books collection</h1>
     <div id="app">
       <div v-if="bookInfo">
-        <ul v-for="book in books">
-          <li :class="{bg:book.isFav}" @click="fav(book)" >
-            <img v-bind:src="book.img"  width="300px" alt="hacker">
-            <p>Title of the book:{{book.title}}</p>
-            <p>Author Name:{{book.author}}</p>
+        <ul v-for="book in filteredBooks">
+          <li :class="{favourite:book.isFav}" @click="handler(book)">
+            <img v-bind:src="book.img" width="200px" alt="">
+            <p>Title: {{book.title}}</p>
+            <p>Author:{{book.author}}</p>
             <p>Age:{{book.age}}</p>
             <p>Gender:{{book.gender}}</p>
-            <hr />
           </li>
+          <hr />
         </ul>
       </div>
-      <button @click="bookInfo=!bookInfo">
-        <span v-if="bookInfo">Hide</span>
+      <button v-on:click="bookInfo=!bookInfo">
         <span v-if="!bookInfo">Show</span>
+        <span v-if="bookInfo">Hide</span>
       </button>
     </div>
     <script src="vue.js"></script>
